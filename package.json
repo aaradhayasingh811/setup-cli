@@ -9,6 +9,7 @@
   "bin": {
     "setup-project": "index.js"
   },
+  "keywords": ["cli", "mern", "express", "vite", "project setup"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aaradhayasingh811/setup-cli.git"
@@ -19,7 +20,6 @@
   "homepage": "https://github.com/aaradhayasingh811/setup-cli#readme",
   "dependencies": {},
   "devDependencies": {},
-  "keywords": [],
   "preferGlobal": true,
   "author": "Aaradhaya Singh",
   "license": "ISC"
