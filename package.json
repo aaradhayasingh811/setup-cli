@@ -1,6 +1,6 @@
 {
   "name": "setup-cli",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.js",
   "description": "CLI tool to generate frontend (Vite) and backend (Express) structure",
   "scripts": {
