@@ -9,6 +9,7 @@ The **Project Setup CLI** is a command-line tool that automates the process of c
   - Folder structure: `models`, `controllers`, `routes`, `middlewares`, `utils`, `public`
   - Auto-creation of `index.js`, `app.js`, `.env`, `.gitignore`, and `constant.js`
   - Installs `nodemon` for automatic server restart
+  - Opens a **new terminal** and runs `nodemon index.js`
 
 - Initializes a **frontend** with:
   - Vite + React (default: JavaScript, optional: TypeScript)
@@ -17,9 +18,9 @@ The **Project Setup CLI** is a command-line tool that automates the process of c
 ---
 
 ## Installation
-To install the CLI globally:
+To install the CLI globally from npm:
 ```sh
-npm link
+npm install -g project-setup-cli
 ```
 
 ---
@@ -134,4 +135,10 @@ MIT License
 
 ## Contributing
 Feel free to submit issues or contribute by creating a pull request! 🚀
+
+---
+
+## Links
+- **NPM Package:** [https://www.npmjs.com/package/setup-cli](https://www.npmjs.com/package/setup-cli)
+- **GitHub Repository:** [[https://github.com/aaradhayasingh811/setup-cli.git](https://github.com/aaradhayasingh811/setup-cli.git)]
 
