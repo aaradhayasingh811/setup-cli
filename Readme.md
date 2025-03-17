@@ -20,7 +20,7 @@ The **Project Setup CLI** is a command-line tool that automates the process of c
 ## Installation
 To install the CLI globally from npm:
 ```sh
-npm install -g project-setup-cli
+npm install -g setup-cli
 ```
 
 ---
