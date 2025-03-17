@@ -1,0 +1,26 @@
+{
+  "name": "project-setup-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "CLI tool to generate frontend (Vite) and backend (Express) structure",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "setup-project": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaradhayasingh811/setup-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aaradhayasingh811/setup-cli/issues"
+  },
+  "homepage": "https://github.com/aaradhayasingh811/setup-cli#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [],
+  "preferGlobal": true,
+  "author": "Aaradhaya Singh",
+  "license": "ISC"
+}
