@@ -12,7 +12,7 @@ The **Project Setup CLI** is a command-line tool that automates the process of c
   - Opens a **new terminal** and runs `nodemon index.js`
 
 - Initializes a **frontend** with:
-  - Vite + React (default: JavaScript, optional: TypeScript)
+  - Vite + React (default: JavaScript)
   - Installs dependencies and runs `npm run dev`
 
 ---
