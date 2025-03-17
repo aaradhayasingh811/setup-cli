@@ -1,14 +1,8 @@
 #!/usr/bin/env node
 
-import { execSync, spawn } from "child_process";
+import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
-import readline from "readline";
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
 
 const projectName = process.argv[2] || "my-project";
 const projectPath = path.join(process.cwd(), projectName);
@@ -19,7 +13,6 @@ if (fs.existsSync(projectPath)) {
 }
 
 console.log(`🚀 Creating project: ${projectName}...\n`);
-
 fs.mkdirSync(projectPath);
 process.chdir(projectPath);
 
@@ -43,8 +36,7 @@ execSync("npm install express dotenv", { stdio: "inherit" });
 execSync("npm install --save-dev nodemon", { stdio: "inherit" });
 
 // Create backend folders
-const folders = ["models", "controllers", "routes", "middlewares", "utils", "public"];
-folders.forEach((folder) => fs.mkdirSync(folder));
+["models", "controllers", "routes", "middlewares", "utils", "public"].forEach((folder) => fs.mkdirSync(folder));
 
 // Create backend files
 fs.writeFileSync(
@@ -59,29 +51,21 @@ fs.writeFileSync("constant.js", `export const API_VERSION = 'v1';`);
 fs.writeFileSync(".gitignore", "node_modules/\n.env");
 fs.writeFileSync(".env", "PORT=5000");
 
-
 process.chdir(".."); // Move back to root project folder
 
-// 2️⃣ Frontend Setup
-console.log("⚡ Setting up frontend with Vite...\n");
+// 2️⃣ Frontend Setup (Default to JavaScript)
+console.log("⚡ Setting up frontend with Vite (JavaScript)...\n");
 fs.mkdirSync("frontend");
+execSync("npm create vite@latest frontend -- --template react", { stdio: "inherit" });
 
-// Ask user for JavaScript or TypeScript
-rl.question("Choose language: (1) JavaScript (default) or (2) TypeScript: ", (choice) => {
-  const template = choice.trim() === "2" ? "react-ts" : "react";
+process.chdir("frontend");
 
-  console.log(`\n⚙️ Installing Vite with React (${template === "react-ts" ? "TypeScript" : "JavaScript"})...\n`);
-  execSync(`npm create vite@latest frontend -- --template ${template}`, { stdio: "inherit" });
+// Install frontend dependencies
+console.log("\n📦 Installing frontend dependencies...\n");
+execSync("npm install", { stdio: "inherit" });
 
-  process.chdir("frontend");
+// Start the frontend server
+console.log("\n🚀 Starting frontend server...\n");
+execSync("npm run dev", { stdio: "inherit" });
 
-  // Install frontend dependencies
-  console.log("\n📦 Installing frontend dependencies...\n");
-  execSync("npm install", { stdio: "inherit" });
-
-  // Start the frontend server
-  console.log("\n🚀 Starting frontend server...\n");
-  execSync("npm run dev", { stdio: "inherit" });
-
-  rl.close();
-});
+console.log("\n✅ Project setup completed successfully!");
