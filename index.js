@@ -60,6 +60,15 @@ execSync("npm create vite@latest frontend -- --template react", { stdio: "inheri
 
 process.chdir("frontend");
 
+// move to src directory 
+process.chdir("src");
+
+// create frontend folders
+["components", "pages", "services", "utils"].forEach((folder) => fs.mkdirSync(folder));
+
+// move back to parent folder(frontend)
+process.chdir("..")
+
 // Install frontend dependencies
 console.log("\n📦 Installing frontend dependencies...\n");
 execSync("npm install", { stdio: "inherit" });
